@@ -104,39 +104,66 @@ html {
 
 body {
   font-family: 'Source Sans Pro', sans-serif;
-  font-weight: 700;
-  padding: 2em;
+  padding: 0em 2em;
+  color: #484944;
   font-size: 1.25em;
-  height: 100%;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
 }
 
 .wrapper {
-  /*add display:flex and set justify-content to space-between*/
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
-  align-items: center;
+  max-width: 1200px;
 }
 
-.div-1, .div-2, .div-3 {
-  /*give the divs a width of 30%, add display:flex, set justify-content and align-items to center*/
+header, footer {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+header h1 {
+  font-size: 3em;
+}
+
+header span {
+  color: #eeaac3;
+  font-family: 'Dancing Script;', cursive;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  border-bottom: 1px solid #484944;
+}
+
+.flex-items {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #484944;
-  line-height: .8em;
+  line-height: 1.5em;
   font-size: 1em;
-  height: auto;
-  /* width: 30%; */
+  border-bottom: 1px solid #555;
 }
 
-.wrapper span {
+p span {
   font-family: 'Dancing Script', cursive;
   color: #eeaac3;
   font-size: 1.3em;
 }
 
+footer {
+  border-top: 1px solid #484944;
+}
 
+footer i {
+  color: #eeaac3;
+  padding: 30px 20px 0 0;
+}
 
 
 /* ==========================================================================
@@ -219,15 +246,23 @@ body {
    Modify as content requires.
    ========================================================================== */
 
-@media all and (min-width: 1200px) {
-  .div-1, .div-2, .div-3 {
-    flex-basis: 30%;
-  }
+@media all and (max-width: 768px) {
+    body {
+      padding: 1em;
+    }
+}
 
-  .div-1, .div-2 {
-    border-right: 1px solid #484944;
-    padding-right: 30px;
-  }
+@media (min-width: 1200px) {
+      .flex-items {
+        flex-basis: 30%;
+        border-bottom: none;
+    }
+
+    #div-2 p {
+      border-left: 1px solid #555;
+      border-right: 1px solid #555;
+      padding: 0 40px;
+    }
 }
 
 @media print,
